@@ -11,10 +11,16 @@ exports.default = {
 			name: 'cart',
 			filename: 'remoteEntry.js',
 			exposes: {
-				'./CartShow': './src/index',
+				'./CartShow': './src/bootstrap',
 			},
+			shared: {
+				faker: {
+					singleton: true,
+				},
+			}, // more info in readme.md file
 		}),
 		new HtmlWebpackPlugin({
+			// more info in readme.md file
 			template: './public/index.html',
 		}),
 	],
